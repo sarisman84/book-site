@@ -13,6 +13,7 @@
         packages = with pkgs; [
           nodejs
           dotnetCorePackages.sdk_9_0
+          claude-code
         ];
         shellHook = ''
           export DOTNET_ROOT="${pkgs.dotnetCorePackages.sdk_9_0}"
