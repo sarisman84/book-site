@@ -13,7 +13,9 @@
         packages = with pkgs; [
           nodejs
           dotnetCorePackages.sdk_9_0
-          claude-code
+          opencode
+          opencode-desktop
+          opencode-claude-auth
         ];
         shellHook = ''
           export DOTNET_ROOT="${pkgs.dotnetCorePackages.sdk_9_0}"
