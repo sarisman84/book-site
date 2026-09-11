@@ -1,0 +1,3 @@
+# Rotating refresh tokens without a server-side denylist
+
+Access tokens (15 min) and refresh tokens (7 days) exchange via a rotating refresh endpoint: each refresh invalidates the presented refresh token and issues a new one, so a stolen refresh token dies after its first (re)play. We deliberately do *not* keep a server-side denylist of access tokens; on logout the refresh token is revoked and the cookie cleared, leaving at most a 15-minute residual window on any already-issued access token. That window is accepted as standard practice — a denylist checked on every request was considered and rejected as infrastructure the app doesn't need.
